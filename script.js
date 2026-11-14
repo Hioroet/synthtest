@@ -43,7 +43,7 @@
     modal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
     // reset any prior state
-    if (form) form.reset();
+    if (form) { form.reset(); form.style.display = ""; }
     if (note) { note.textContent = ""; note.className = "modal__note"; }
     if (successPanel) successPanel.hidden = true;
     var email = document.getElementById("email");
@@ -86,7 +86,7 @@
 
       if (!email) {
         emailEl.classList.add("invalid");
-        note.textContent = "Please enter your email to join the waitlist.";
+        note.textContent = "Please enter your work email to request beta access.";
         note.classList.add("err");
         emailEl.focus();
         return;
@@ -122,4 +122,78 @@
       });
     }
   }
+
+  // ===== Legal / System Status modal =====
+  var legalModal = document.getElementById("legal-modal");
+  var legalTitle = document.getElementById("legal-title");
+  var legalBody = document.getElementById("legal-body");
+
+  var LEGAL = {
+    privacy: {
+      title: "Privacy Policy",
+      html:
+        '<p>SynthTest ("SynthTest", "we") respects your privacy. This policy explains what we collect and how we use it.</p>' +
+        '<p><strong>Data we collect:</strong> email addresses submitted for private beta access, plus basic diagnostic data such as browser type, device, and pages visited.</p>' +
+        '<p><strong>How we use it:</strong> to grant dashboard access, deliver your simulation reports, and send product updates. We never sell your personal data.</p>' +
+        '<p><strong>Retention &amp; your rights:</strong> you may request access to, correction of, or deletion of your data at any time by emailing <a href="mailto:nahar@synthtest.tech">nahar@synthtest.tech</a>.</p>' +
+        '<p><strong>Cookies:</strong> we use only essential cookies and privacy-friendly analytics to keep the service running.</p>'
+    },
+    terms: {
+      title: "Terms of Service",
+      html:
+        '<p>By accessing SynthTest ("the Service") you agree to these terms.</p>' +
+        '<p><strong>Service description:</strong> SynthTest provides AI-powered, multi-agent marketing simulations. Reports are directional estimates, not guarantees of performance.</p>' +
+        '<p><strong>Acceptable use:</strong> you agree not to misuse the Service, attempt to reverse engineer it, or use it for unlawful purposes.</p>' +
+        '<p><strong>Beta access:</strong> private beta features may change or be withdrawn during the beta program. Credits provided during beta have no cash value.</p>' +
+        '<p><strong>Liability:</strong> the Service is provided "as is" without warranties. SynthTest is not liable for indirect or consequential damages.</p>' +
+        '<p>Questions? Contact <a href="mailto:nahar@synthtest.tech">nahar@synthtest.tech</a>.</p>'
+    },
+    status: {
+      title: "System Status: Operational",
+      html:
+        '<p><span class="status-dot" aria-hidden="true"></span> <strong class="status-text">All systems operational.</strong></p>' +
+        '<p>Inference cluster, agent orchestration, and the dashboard API are reporting healthy. Latest check: just now.</p>' +
+        '<ul class="legal__list">' +
+        '<li><span class="status-dot" aria-hidden="true"></span> Inference Cluster — Operational</li>' +
+        '<li><span class="status-dot" aria-hidden="true"></span> Agent Orchestration — Operational</li>' +
+        '<li><span class="status-dot" aria-hidden="true"></span> Dashboard &amp; API — Operational</li>' +
+        '</ul>'
+    }
+  };
+
+  var legalLastFocused = null;
+
+  function openLegal(key) {
+    var item = LEGAL[key];
+    if (!item || !legalModal) return;
+    legalLastFocused = document.activeElement;
+    legalTitle.textContent = item.title;
+    legalBody.innerHTML = item.html;
+    legalModal.classList.add("open");
+    legalModal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeLegal() {
+    if (!legalModal) return;
+    legalModal.classList.remove("open");
+    legalModal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    if (legalLastFocused && typeof legalLastFocused.focus === "function") legalLastFocused.focus();
+  }
+
+  document.querySelectorAll("[data-legal]").forEach(function (el) {
+    el.addEventListener("click", function (e) {
+      e.preventDefault();
+      openLegal(el.getAttribute("data-legal"));
+    });
+  });
+
+  document.querySelectorAll("[data-close-legal]").forEach(function (el) {
+    el.addEventListener("click", closeLegal);
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && legalModal && legalModal.classList.contains("open")) closeLegal();
+  });
 })();

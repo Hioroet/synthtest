@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="SynthTest AI — Test your ad copy, landing pages, and product concepts against 10,000+ hyper-realistic AI personas in 30 seconds. Stop guessing. Start knowing." />
-  <title>SynthTest AI — Know If Your Ad Will Flop or Go Viral</title>
+  <meta name="description" content="SynthTest (synthtest.tech) is a deep-tech AI infrastructure startup. Test your ad copy, landing pages, and product concepts against 10,000+ hyper-realistic AI personas in 30 seconds on our distributed GPU inference cluster." />
+  <title>SynthTest (synthtest.tech) — Know If Your Ad Will Flop or Go Viral</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -15,15 +15,16 @@
   <!-- ===== NAV ===== -->
   <header class="nav" id="nav">
     <div class="container nav__inner">
-      <a href="#hero" class="brand" aria-label="SynthTest AI home">
-        <span class="brand__mark">SynthTest<span class="brand__dot">.</span>ai</span>
+      <a href="#hero" class="brand" aria-label="SynthTest home">
+        <span class="brand__mark">SynthTest</span>
       </a>
       <nav class="nav__links">
         <a href="#problem">Problem</a>
         <a href="#solution">Solution</a>
         <a href="#how">How It Works</a>
+        <a href="#architecture">Architecture</a>
       </nav>
-      <button class="btn btn--ghost btn--sm nav__cta" data-open-modal>Join Waitlist</button>
+      <button class="btn btn--ghost btn--sm nav__cta" data-open-modal>Private Beta</button>
     </div>
   </header>
 
@@ -38,7 +39,7 @@
 
     <div class="container hero__inner">
       <div class="hero__badge reveal">
-        <span class="pulse"></span> 10,000+ AI Personas · Results in 30 seconds
+        <span class="pulse"></span> Private Beta · 10,000+ AI Personas · Results in 30 seconds
       </div>
 
       <h1 class="hero__title reveal">
@@ -56,7 +57,7 @@
         <button class="btn btn--primary btn--lg" data-open-modal>
           <span class="btn__icon">🚀</span> Test My Ad Now <span class="btn__price">(Only $5)</span>
         </button>
-        <p class="hero__trust">No credit card required to join · 3 free simulations on launch</p>
+        <p class="hero__trust">No credit card required · 3 free multi-agent simulation reports with private beta access</p>
       </div>
 
       <div class="hero__stats reveal">
@@ -105,9 +106,9 @@
   <!-- ===== SOLUTION ===== -->
   <section class="section solution" id="solution">
     <div class="container">
-      <h2 class="section__title reveal">✨ Meet SynthTest AI:<br />Your Instant Virtual Focus Group</h2>
+      <h2 class="section__title reveal">✨ Meet SynthTest:<br />Your Instant Virtual Focus Group</h2>
       <p class="section__lead reveal">
-        This isn’t a basic chatbot. SynthTest AI is a simulation engine powered by
+        This isn’t a basic chatbot. SynthTest is a simulation engine powered by
         <strong>10,000+ highly detailed, behaviorally accurate AI personas</strong>. When you upload your
         ad copy or product image, these AI agents react exactly like real humans — giving you
         <em>“God-like”</em> insights into your target market’s psychology.
@@ -175,11 +176,44 @@
     </div>
   </section>
 
+  <!-- ===== ARCHITECTURE ===== -->
+  <section class="section architecture" id="architecture">
+    <div class="container">
+      <h2 class="section__title reveal">Under the Hood: Multi-Agent Simulation Architecture</h2>
+      <p class="section__lead reveal">
+        Built for high-concurrency parallel inference and behavioral vector modeling.
+      </p>
+
+      <div class="arch-grid">
+        <article class="arch-card reveal">
+          <div class="arch-card__icon" aria-hidden="true">⚡</div>
+          <h3>10,000+ Parallel Agent Threads</h3>
+          <p>Containerized worker nodes execute thousands of quantized LLM persona evaluations simultaneously, delivering full demographic reports in under 30 seconds.</p>
+        </article>
+        <article class="arch-card reveal">
+          <div class="arch-card__icon" aria-hidden="true">🧠</div>
+          <h3>Behavioral Vector Memory</h3>
+          <p>Each synthetic persona is backed by persistent psychographic embeddings, demographic constraints, and historical purchase intent stored in high-speed vector databases.</p>
+        </article>
+        <article class="arch-card reveal">
+          <div class="arch-card__icon" aria-hidden="true">📈</div>
+          <h3>Real-Time Sentiment & Friction Scoring</h3>
+          <p>Custom predictive-analytic pipelines parse multi-agent responses to generate word-level attention heatmaps and conversion lift probabilities.</p>
+        </article>
+        <article class="arch-card reveal">
+          <div class="arch-card__icon" aria-hidden="true">☁️</div>
+          <h3>Cloud-Native GPU Orchestration</h3>
+          <p>Autoscaling Kubernetes clusters dynamically allocate NVIDIA GPU compute during peak campaign simulations with zero cold-start latency.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== FINAL CTA ===== -->
   <section class="final-cta">
     <div class="container final-cta__inner reveal">
       <h2>Ready to stop guessing?<br />See exactly how your audience will react.</h2>
-      <p>Join the priority waitlist and lock in 3 free simulations on day one.</p>
+      <p>Get private beta access and lock in 3 free multi-agent simulation reports on day one.</p>
       <button class="btn btn--primary btn--lg" data-open-modal>
         <span class="btn__icon">🚀</span> Test My Ad Now <span class="btn__price">(Only $5)</span>
       </button>
@@ -189,13 +223,24 @@
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container footer__inner">
-      <div class="brand brand--footer">SynthTest<span class="brand__dot">.</span>ai</div>
+      <div class="brand brand--footer">SynthTest</div>
       <p class="footer__tagline">Your instant virtual focus group. 10,000+ AI personas. 30-second reports.</p>
-      <p class="footer__copy">© <span id="year"></span> SynthTest AI. All rights reserved.</p>
+
+      <nav class="footer__links" aria-label="Legal and status">
+        <a href="#" data-legal="privacy">Privacy Policy</a>
+        <a href="#" data-legal="terms">Terms of Service</a>
+        <a href="#" data-legal="status">System Status <span class="status-dot" aria-hidden="true"></span> (Operational)</a>
+      </nav>
+
+      <p class="footer__contact">
+        Contact: <a href="mailto:nahar@synthtest.tech">nahar@synthtest.tech</a>
+      </p>
+
+      <p class="footer__copy">© <span id="year">2026</span> SynthTest (synthtest.tech). All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- ===== FAKE DOOR WAITLIST MODAL ===== -->
+  <!-- ===== PRIVATE BETA MODAL ===== -->
   <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal__backdrop" data-close-modal></div>
     <div class="modal__card" role="document">
@@ -205,16 +250,12 @@
         <span>🎉</span><span>✨</span><span>🚀</span><span>⭐</span><span>🎊</span>
       </div>
 
-      <h2 class="modal__title" id="modal-title">🎉 You’re Early!<br /><span>We’re Upgrading Our AI Engines.</span></h2>
+      <h2 class="modal__title" id="modal-title">Request Private Beta Access</h2>
 
       <p class="modal__body">
-        Thank you for your interest! Due to overwhelming demand, our AI servers are currently undergoing a
-        major upgrade, and we’ve opened a <strong>priority Waitlist</strong> for new users.
-      </p>
-      <p class="modal__body modal__body--small">
-        Drop your email below to secure your spot. We’ll notify you the moment we go live — and as a thank
-        you, we’ll give you <strong>3 Free AI Focus Group Simulations</strong>
-        <span class="strike">$15 value</span> on day one.
+        We are actively onboarding marketing teams and founders onto our distributed GPU inference
+        cluster. Enter your work email to unlock <strong>3 free multi-agent simulation reports
+        ($15 value)</strong> and immediate dashboard access.
       </p>
 
       <form class="modal__form" id="waitlist-form" novalidate>
@@ -228,7 +269,7 @@
             required
             aria-label="Email address" />
           <button type="submit" class="btn btn--primary modal__submit">
-            <span class="btn__icon">👉</span> Join the Priority Waitlist
+            <span class="btn__icon">👉</span> Get Beta Access
           </button>
         </div>
         <p class="modal__note" id="form-note" aria-live="polite"></p>
@@ -236,10 +277,20 @@
 
       <div class="modal__success" id="modal-success" hidden>
         <div class="modal__success-icon">✅</div>
-        <h3>You’re on the list!</h3>
-        <p>Welcome aboard. Keep an eye on your inbox — your spot is secured and your 3 free simulations are locked in. 🎁</p>
+        <h3>You’re in!</h3>
+        <p>Welcome aboard. Keep an eye on your inbox — your private beta access is secured and your 3 free simulations are locked in. 🎁</p>
         <button class="btn btn--ghost" data-close-modal>Done</button>
       </div>
+    </div>
+  </div>
+
+  <!-- ===== LEGAL / STATUS MODAL ===== -->
+  <div class="modal" id="legal-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="legal-title">
+    <div class="modal__backdrop" data-close-legal></div>
+    <div class="modal__card legal__card" role="document">
+      <button class="modal__close" data-close-legal aria-label="Close">×</button>
+      <h2 class="modal__title" id="legal-title"></h2>
+      <div class="modal__body legal__body" id="legal-body"></div>
     </div>
   </div>
 
